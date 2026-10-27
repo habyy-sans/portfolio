@@ -1,0 +1,187 @@
+/* =========================================================
+   1. VARIABEL & RESET
+   ========================================================= */
+:root {
+  --cream: #f6f2e9;
+  --sage-light: #e9ecdf;
+  --sage: #a9c299;
+  --green: #3f6a43;
+  --green-dark: #2f4a33;
+  --ink: #2c3a2f;
+  --muted: #6d7a6c;
+  --white: #fff;
+  --shadow: 0 6px 18px rgba(47, 74, 51, .10);
+  --shadow-hover: 0 14px 30px rgba(47, 74, 51, .22);
+  --radius: 14px;
+  --script: "Patrick Hand", "Comic Sans MS", cursive;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.65; overflow-x: hidden; }
+img, svg { max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+.container { width: min(1060px, 92%); margin: 0 auto; }
+.script { font-family: var(--script); font-weight: 400; }
+.ico { width: 1em; height: 1em; vertical-align: -.12em; margin-right: .4em; color: #7fae6f; }
+.title { font-size: clamp(2rem, 4vw, 2.6rem); text-align: center; color: var(--ink); line-height: 1.2; }
+.title.left { text-align: left; margin-bottom: 16px; }
+:focus-visible { outline: 3px solid #7fae6f; outline-offset: 3px; border-radius: 6px; }
+
+/* Dekorasi umum (tidak menghalangi klik) */
+.deco { position: absolute; pointer-events: none; z-index: 0; }
+.sway { color: #7fae6f; width: 22px; height: 22px; animation: float 5s ease-in-out infinite; }
+
+/* =========================================================
+   2. NAVIGASI
+   ========================================================= */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; justify-content: center; padding: 8px 12px; pointer-events: none; }
+.nav nav { pointer-events: auto; display: flex; gap: 4px; max-width: 100%; overflow-x: auto; padding: 4px 6px; border-radius: 999px; background: rgba(30, 45, 33, .55); backdrop-filter: blur(8px); }
+.nav a { color: #fff; text-decoration: none; font-size: .85rem; padding: 4px 14px; border-radius: 999px; white-space: nowrap; transition: background .25s; }
+.nav a:hover, .nav a:focus-visible { background: rgba(255, 255, 255, .25); }
+
+/* =========================================================
+   3. HERO
+   ========================================================= */
+.hero { position: relative; min-height: 420px; display: flex; align-items: center; color: #fff;
+  background: linear-gradient(rgba(20, 32, 24, .45), rgba(20, 32, 24, .45)), url("assets/hero-bg.png") center / cover, #3f5a45; }
+.hero-inner { position: relative; width: min(1000px, 92%); margin: 0 auto; padding: 70px 0 40px; display: flex; align-items: center; gap: 40px; }
+.avatar { flex: 0 0 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255, 255, 255, .9); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block; }
+.hero-text { position: relative; }
+.hero h1 .ico { position: absolute; left: -26px; top: .3em; width: 20px; height: 20px; margin: 0; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); line-height: 1.1; letter-spacing: .01em; text-shadow: 0 2px 8px rgba(0, 0, 0, .5); }
+.hero .name { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; margin-top: 4px; max-width: 8.6em; text-shadow: 0 2px 8px rgba(0, 0, 0, .5); }
+.tagline { font-size: 1.3rem; margin: 14px 0; position: relative; text-shadow: 0 1px 6px rgba(0, 0, 0, .5); }
+.contact { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: .88rem; }
+.contact a { text-decoration: none; text-shadow: 0 1px 4px rgba(0, 0, 0, .6); }
+.contact a:hover { text-decoration: underline; }
+.contact .ico, .socials .ico { color: #fff; }
+.socials { display: flex; gap: 14px; margin-top: 14px; }
+.socials a { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: #fff; transition: transform .25s, background .25s; }
+.socials a:hover { background: rgba(255, 255, 255, .22); transform: translateY(-3px); }
+.socials svg { width: 22px; height: 22px; fill: currentColor; }
+.hero-note { position: absolute; right: 0; top: 70px; text-align: center; font-size: .95rem; line-height: 1.2; opacity: .9; }
+.d-leaf1 { left: -8px; top: 52px; } .d-leaf2 { left: 60px; top: 96px; width: 16px; height: 16px; animation-delay: -2s; }
+
+/* =========================================================
+   4. ABOUT
+   ========================================================= */
+.about { position: relative; padding: 56px 0 50px; }
+.about-grid { display: grid; grid-template-columns: 1.3fr 1fr .8fr; gap: 28px; align-items: center; position: relative; z-index: 1; }
+.about p { font-size: .92rem; margin-bottom: 8px; }
+.small { color: var(--green); font-size: 1.05rem; margin-top: 14px; }
+.info { background: var(--sage-light); border-radius: var(--radius); padding: 22px; display: grid; gap: 16px; }
+.info li { display: flex; gap: 12px; align-items: center; }
+.info strong { display: block; font-size: .9rem; line-height: 1.3; }
+.info small { color: var(--muted); font-size: .78rem; line-height: 1.4; display: block; }
+.badge { flex: 0 0 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #d6e0c9; color: var(--green); }
+.badge svg { width: 20px; height: 20px; }
+.badge.dark { background: var(--green); color: #fff; }
+.about-art { width: 100%; height: auto; filter: drop-shadow(var(--shadow)); }
+.d-about { right: 3%; top: 14px; width: 34px; height: 50px; opacity: .8; }
+
+/* =========================================================
+   5. EXPERIENCE
+   ========================================================= */
+.experience { position: relative; background: var(--sage-light); padding: 56px 0 70px; }
+.title-row { position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 36px; min-height: 70px; }
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; position: relative; z-index: 1; }
+.card { flex: 0 1 calc(33.333% - 18px); min-width: 270px; background: var(--white); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); transition: transform .35s ease, box-shadow .35s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+.card header { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.card h3 { font-size: .92rem; line-height: 1.3; }
+.card small { color: var(--muted); font-size: .76rem; line-height: 1.4; display: block; }
+.card ul li { position: relative; padding-left: 16px; font-size: .8rem; margin-bottom: 8px; line-height: 1.55; }
+.card ul li::before { content: ""; position: absolute; left: 2px; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: #5d9a62; }
+
+/* Stiker */
+.sticker { position: absolute; font-family: var(--script); font-weight: 400; color: var(--green-dark); background: #fffdf5; border-radius: 22px; padding: 8px 14px; box-shadow: 0 3px 10px rgba(47, 74, 51, .18); line-height: 1.15; text-align: center; z-index: 2; pointer-events: none; }
+.st-keep { left: 4%; top: -18px; transform: rotate(-8deg); font-size: 1.15rem; border: 2px solid var(--green-dark); border-radius: 10px 18px 10px 18px; }
+.st-debug { right: 3%; top: 0; transform: rotate(5deg); font-size: 1rem; }
+.st-good { right: 2%; top: -10px; transform: rotate(-6deg); font-size: 1.1rem; }
+.d-exp1 { right: 2%; bottom: 18px; width: 54px; height: 66px; }
+.d-exp2 { left: 3%; bottom: 40px; width: 42px; height: 32px; }
+
+/* =========================================================
+   6. MY PROJECTS
+   ========================================================= */
+.projects { position: relative; padding: 56px 0 80px; }
+.vibe { position: absolute; left: 2%; top: -22px; width: 130px; text-align: center; z-index: 2; }
+.vibe .script { display: block; background: #fffdf5; border-radius: 12px; padding: 0 12px; box-shadow: var(--shadow); font-size: 1.1rem; transform: rotate(-4deg); }
+.vibe svg { width: 120px; height: 95px; display: block; margin: 0 auto; }
+.grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 34px; padding-top: 10px; position: relative; z-index: 1; }
+
+/* Pembungkus (.lift) = efek angkat; elemen dalam (.swing) = ayunan.
+   Dua elemen berbeda agar properti `transform` tidak saling menimpa. */
+.lift { flex: 0 1 calc(33.333% - 24px); min-width: 250px; max-width: 320px; transition: transform .4s ease, filter .4s ease; filter: drop-shadow(0 6px 10px rgba(47, 74, 51, .14)); }
+.lift:hover { transform: translateY(-8px); filter: drop-shadow(0 16px 20px rgba(47, 74, 51, .26)); }
+.swing { height: 100%; background: var(--white); border-radius: var(--radius); overflow: hidden; transform-origin: top center; transition: transform .8s ease-out; }
+.lift:hover .swing { animation: sway 2.2s ease-in-out infinite; }
+@keyframes sway { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(1.5deg); } 75% { transform: rotate(-1.5deg); } }
+.shot { aspect-ratio: 16 / 10; overflow: hidden; background: #dfe6d4; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.lift:hover .shot img { transform: scale(1.07); }
+.body { padding: 14px 16px 18px; }
+.body h3 { font-size: .95rem; }
+.tech { color: var(--muted); font-size: .72rem; margin: 2px 0 6px; }
+.body p:not(.tech) { font-size: .78rem; line-height: 1.55; margin-bottom: 10px; }
+.status { display: inline-block; font-size: .7rem; font-weight: 600; padding: 1px 12px; border-radius: 999px; }
+.done { background: #dfeedd; color: var(--green); }
+.ongoing { background: #f5ecc7; color: #7d6a1a; }
+.d-pr1 { left: 2%; bottom: 24px; width: 34px; height: 50px; }
+.d-pr2 { right: 4%; bottom: 40px; width: 30px; height: 30px; }
+
+/* =========================================================
+   7. FOOTER
+   ========================================================= */
+.footer { color: #fff; background: linear-gradient(rgba(10, 20, 14, .45), rgba(10, 20, 14, .55)), url("assets/footer-bg.png") center / cover, #24362b; padding: 90px 0 56px; }
+.foot-inner { position: relative; width: min(1000px, 92%); margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.foot-text { text-align: center; flex: 1; }
+.foot-text h2 { font-size: clamp(1.7rem, 4vw, 2.2rem); text-shadow: 0 2px 8px rgba(0, 0, 0, .6); }
+.foot-text p { font-size: .9rem; margin: 10px auto; max-width: 440px; text-shadow: 0 1px 6px rgba(0, 0, 0, .7); }
+.foot-text .socials { justify-content: center; }
+.foot-cat { width: 110px; text-align: center; font-size: .9rem; line-height: 1.15; }
+.foot-cat svg { width: 110px; height: 88px; display: block; margin-top: 4px; }
+.foot-note { text-align: center; font-size: .9rem; line-height: 1.3; width: 110px; opacity: .9; }
+
+/* =========================================================
+   8. ANIMASI RINGAN & SCROLL REVEAL
+   ========================================================= */
+@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+.float { animation: float 4.5s ease-in-out infinite; }
+.flutter { animation: float 3.5s ease-in-out infinite; }
+/* Konten tetap terlihat jika JS mati; hanya disembunyikan bila class "js" ada */
+.js .reveal { opacity: 0; translate: 0 18px; transition: opacity .7s ease, translate .7s ease, transform .35s ease, box-shadow .35s ease; }
+.js .reveal.visible { opacity: 1; translate: 0 0; }
+
+/* =========================================================
+   9. RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr 1fr; }
+  .about-art { grid-column: 1 / -1; max-width: 260px; margin: 0 auto; }
+  .card { flex-basis: calc(50% - 14px); }
+  .lift { flex-basis: calc(50% - 20px); }
+  .st-debug, .d-pr1 { display: none; }
+}
+@media (max-width: 640px) {
+  .hero-inner { flex-direction: column; text-align: center; padding-top: 80px; gap: 22px; }
+  .hero .contact, .hero .socials { justify-content: center; }
+  .hero h1 .ico { position: static; margin-right: .3em; }
+  .hero .name { max-width: none; }
+  .hero-note, .d-leaf1, .d-leaf2, .st-keep, .st-good, .d-exp2 { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .card, .lift { flex-basis: 100%; max-width: 100%; }
+  .title-row { flex-direction: column; }
+  .vibe { position: static; margin-bottom: 8px; }
+  .foot-inner { flex-direction: column; align-items: center; }
+  .foot-cat { order: 2; } .foot-note { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .js .reveal { opacity: 1; translate: 0 0; }
+}

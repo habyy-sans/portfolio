@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio | Muhammad Hasbiy Ashshiddiqi</title>
+  <!-- Tambahkan class "js" agar efek scroll reveal hanya aktif jika JavaScript berjalan -->
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== SVG SPRITE: ikon & dekorasi (bisa dipakai ulang dengan <use>) ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="leaf" viewBox="0 0 32 32"><path d="M6 26C6 12 14 5 27 5c0 13-7 21-21 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 26 20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="sprig" viewBox="0 0 40 60"><path d="M20 58V8" stroke="#5f7a52" stroke-width="2" fill="none" stroke-linecap="round"/><g fill="#a9c299" stroke="#4f6b45" stroke-width="1.5"><path d="M20 20C8 18 6 8 6 8s12-2 14 12z"/><path d="M20 30C32 28 34 18 34 18s-12-2-14 12z"/><path d="M20 42C8 40 6 30 6 30s12-2 14 12z"/><path d="M20 10C16 4 20 1 20 1s4 3 0 9z"/></g></symbol>
+    <symbol id="pot" viewBox="0 0 50 60"><g stroke="#4f6b45" stroke-width="1.5" fill="#a9c299"><path d="M25 38C14 34 10 22 10 22s14-1 15 16z"/><path d="M25 38C36 32 38 18 38 18s-14 0-13 20z"/><path d="M25 38C24 28 25 14 25 14s7 10 0 24z"/></g><path d="M12 40h26l-3 17H15z" fill="#d9b48f" stroke="#8a6a4a" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="flower" viewBox="0 0 30 30"><g fill="#fff" stroke="#4f6b45" stroke-width="1.2"><circle cx="15" cy="7" r="5"/><circle cx="23" cy="13" r="5"/><circle cx="20" cy="22" r="5"/><circle cx="10" cy="22" r="5"/><circle cx="7" cy="13" r="5"/></g><circle cx="15" cy="15" r="3.5" fill="#f2d675" stroke="#4f6b45" stroke-width="1.2"/></symbol>
+    <symbol id="butterfly" viewBox="0 0 40 30"><g fill="#cfe0c4" stroke="#4f6b45" stroke-width="1.3"><path d="M20 15C14 2 3 3 5 12c1 6 9 6 15 3z"/><path d="M20 15C26 2 37 3 35 12c-1 6-9 6-15 3z"/><path d="M20 15C13 18 9 28 15 27c5-1 6-8 5-12z"/><path d="M20 15c7 3 11 13 5 12-5-1-6-8-5-12z"/></g><path d="M20 10v14" stroke="#4f6b45" stroke-width="1.5"/></symbol>
+
+    <!-- Kucing coding dengan laptop -->
+    <symbol id="cat" viewBox="0 0 140 110">
+      <ellipse cx="70" cy="102" rx="62" ry="6" fill="#cfe0c4"/>
+      <path d="M44 40 40 14l20 12zM96 40l4-26-20 12z" fill="#f4e6cf" stroke="#4a5a42" stroke-width="2" stroke-linejoin="round"/>
+      <ellipse cx="70" cy="56" rx="38" ry="32" fill="#fbf1de" stroke="#4a5a42" stroke-width="2"/>
+      <path d="M52 30c4-4 10-5 14-4M84 28c-3 0-6 1-8 3" stroke="#d6a77a" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <circle cx="56" cy="54" r="3.2" fill="#3b4a35"/><circle cx="84" cy="54" r="3.2" fill="#3b4a35"/>
+      <ellipse cx="48" cy="63" rx="5" ry="3" fill="#f3b6a6" opacity=".7"/><ellipse cx="92" cy="63" rx="5" ry="3" fill="#f3b6a6" opacity=".7"/>
+      <path d="M66 62q4 4 8 0" stroke="#3b4a35" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M26 100 36 82h68l10 18z" fill="#4a5058" stroke="#2f343a" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M40 82 46 68h48l6 14z" fill="#5c646c" stroke="#2f343a" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="70" cy="75" r="3" fill="#cfe0c4"/>
+      <ellipse cx="52" cy="82" rx="8" ry="5" fill="#fbf1de" stroke="#4a5a42" stroke-width="2"/><ellipse cx="88" cy="82" rx="8" ry="5" fill="#fbf1de" stroke="#4a5a42" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ========== NAVIGASI ========== -->
+<header class="nav">
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="avatar"><img src="assets/profile pp.jpeg" alt="Photo of Muhammad Hasbiy Ashshiddiqi" data-fallback="Profile Photo"></div>
+    <div class="hero-text">
+      <h1 class="script"><svg class="ico leaf-ico"><use href="#leaf"/></svg>My Portfolio</h1>
+      <h2 class="script name">Muhammad Hasbiy Ashshiddiqi</h2>
+      <p class="tagline script"><svg class="ico"><use href="#leaf"/></svg>Turning Ideas into Meaningful Solutions</p>
+      <p class="contact">
+        <a href="mailto:muhammadhasbiyashshiddiqi@gmail.com"><svg class="ico" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>muhammadhasbiyashshiddiqi@gmail.com</a>
+        <a href="tel:082231048080"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="currentColor"/></svg>082231048080</a>
+      </p>
+      <div class="socials" data-socials></div>
+    </div>
+    <span class="hero-note script">Better<br>Things<br>Ahead<br>:)</span>
+    <svg class="deco d-leaf1 sway"><use href="#leaf"/></svg>
+    <svg class="deco d-leaf2 sway"><use href="#leaf"/></svg>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about" id="about">
+  <svg class="deco d-about" viewBox="0 0 40 60"><use href="#sprig"/></svg>
+  <div class="container about-grid">
+    <div class="reveal">
+      <h2 class="script title left"><svg class="ico"><use href="#leaf"/></svg>About Me</h2>
+      <p>Hi! I'm Hasbiy, a 5th-semester Business Information Systems student at Politeknik Negeri Malang. I'm particularly interested in application development, data management, and information systems that support business needs.</p>
+      <p>Through various academic projects, I keep developing my skills in web development, mobile app development, and business intelligence. I enjoy learning new things, working in teams, and turning ideas into solutions that work.</p>
+      <p class="small script"><svg class="ico"><use href="#leaf"/></svg>Small steps, big dreams.</p>
+    </div>
+    <ul class="info reveal">
+      <li><span class="badge"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 8-4v6h2V9zM6 13v4c0 2 12 2 12 0v-4l-6 3z" fill="currentColor"/></svg></span><div><strong>Politeknik Negeri Malang</strong><small>Business Information Systems<br>2024 – Present</small></div></li>
+      <li><span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z" fill="currentColor"/></svg></span><div><strong>Malang, East Java</strong><small>(Indonesia)</small></div></li>
+      <li><span class="badge"><svg viewBox="0 0 24 24"><path d="M5 4h14v17H5zM5 9h14M9 2v4M15 2v4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><div><strong>Semester 5</strong><small>(2026)</small></div></li>
+    </ul>
+    <!-- Ilustrasi gunung & danau (SVG sederhana, bisa diganti dengan assets/about-illustration.png) -->
+    <svg class="about-art reveal" viewBox="0 0 200 180" role="img" aria-label="Mountain and lake illustration">
+      <rect width="200" height="180" rx="14" fill="#f3efe4"/>
+      <circle cx="140" cy="38" r="15" fill="#f2cf7a"/>
+      <path d="M30 120 85 52l55 68z" fill="#9db38f" stroke="#4f6b45" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M85 52l-14 22 10-4 6 8 8-9 9 5z" fill="#fff" opacity=".85"/>
+      <g fill="#6f8a60" stroke="#4f6b45" stroke-width="1.5"><path d="M20 135l12-30 12 30z"/><path d="M150 135l12-34 12 34z"/><path d="M170 140l10-26 10 26z"/></g>
+      <path d="M20 140c30-10 60 4 90-4s60-6 80 0v26H20z" fill="#bfe0e8"/>
+      <path d="M45 152h50M110 160h50" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="title-row">
+      <h2 class="script title"><svg class="ico"><use href="#leaf"/></svg>Experience</h2>
+      <span class="sticker st-keep float" aria-hidden="true">Keep<br>Coding<br>&lt;/&gt;</span>
+      <span class="sticker st-debug" aria-hidden="true">Debug • Learn • Improve</span>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <header><span class="badge dark"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 8-4v6h2V9zM6 13v4c0 2 12 2 12 0v-4l-6 3z" fill="currentColor"/></svg></span><div><h3>Student</h3><small>Politeknik Negeri Malang<br>2024 – Present</small></div></header>
+        <ul><li>Learning and developing skills in information systems, data, and web development.</li><li>Active in assignments, projects, and campus activities.</li></ul>
+      </article>
+      <article class="card reveal">
+        <header><span class="badge dark"><svg viewBox="0 0 24 24"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Web Development (Personal Project)</h3><small>Laravel &amp; Flutter<br>2024 – Present</small></div></header>
+        <ul><li>Developing web and mobile applications for personal needs.</li><li>Implementing features such as authentication, databases, and thoughtful UI/UX.</li></ul>
+      </article>
+      <article class="card reveal">
+        <header><span class="badge dark"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6"/><circle cx="17" cy="9" r="2.500"/><path d="M17 14c3 0 4 2 4 5"/></g></svg></span><div><h3>Team Project</h3><small>College Project<br>2024 – Present</small></div></header>
+        <ul><li>Collaborating on building systems and web-based applications.</li><li>Sharing tasks, discussing, and solving problems together as a team.</li></ul>
+      </article>
+      <article class="card reveal">
+        <header><span class="badge dark"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round"/></svg></span><div><h3>Business Intelligence</h3><small>College Project<br>2024 – Present</small></div></header>
+        <ul><li>Processing data, compiling performance indicators, and building dashboards to support business analysis.</li><li>Sharing tasks, discussing, and solving problems together as a team.</li></ul>
+      </article>
+      <article class="card reveal">
+        <header><span class="badge dark"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><div><h3>Mobile App Development</h3><small>College Project<br>2024 – Present</small></div></header>
+        <ul><li>Designing and developing a student marketplace app using Flutter and Supabase.</li><li>Sharing tasks, discussing, and solving problems together as a team.</li></ul>
+      </article>
+    </div>
+  </div>
+  <svg class="deco d-exp1" viewBox="0 0 50 60"><use href="#pot"/></svg>
+  <svg class="deco d-exp2 flutter" viewBox="0 0 40 30"><use href="#butterfly"/></svg>
+</section>
+
+<!-- ========== MY PROJECTS ========== -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="title-row">
+      <div class="vibe" aria-hidden="true">
+        <span class="script">Vibe Coder</span>
+        <svg viewBox="0 0 140 110"><use href="#cat"/></svg>
+      </div>
+      <h2 class="script title"><svg class="ico"><use href="#leaf"/></svg>My Projects</h2>
+      <span class="sticker st-good float" aria-hidden="true">Good Code,<br>Good Day ☺</span>
+    </div>
+    <ul class="grid">
+      <li class="lift">
+        <article class="swing project">
+          <div class="shot"><img src="assets/projects/Profile_company.jpeg" alt="Profile Company project" data-fallback="Profile Company"></div>
+          <div class="body">
+            <h3>Profile Company</h3>
+            <p class="tech">Web App • Php Native • Css</p>
+            <p>POS application with product, transaction, and report features.</p>
+            <span class="status done">Done</span>
+          </div>
+        </article>
+      </li>
+      <li class="lift">
+        <article class="swing project">
+          <div class="shot"><img src="assets/projects/web-sop-k3.jpg" alt="Web SOP K3 project" data-fallback="Web SOP K3"></div>
+          <div class="body">
+            <h3>Web SOP K3</h3>
+            <p class="tech">Web App • Php Native • Css</p>
+            <p>Interactive dashboard for analyzing poverty in East Java with data from various sources.</p>
+            <span class="status done">Done</span>
+          </div>
+        </article>
+      </li>
+      <li class="lift">
+        <article class="swing project">
+          <div class="shot"><img src="assets/projects/Studlent.jpeg" alt="Student App project" data-fallback="Student App"></div>
+          <div class="body">
+            <h3>Student App</h3>
+            <p class="tech">Mobile App • Flutter • Supabase</p>
+            <p>Marketplace for students to learn and freelance, with chat, payment, and project management features.</p>
+            <span class="status done">Done</span>
+          </div>
+        </article>
+      </li>
+      <li class="lift">
+        <article class="swing project">
+          <div class="shot"><img src="assets/projects/Kopsync.jpeg" alt="KopSync POS Management project" data-fallback="KopSync POS"></div>
+          <div class="body">
+            <h3>KopSync POS Management</h3>
+            <p class="tech">Web App • Laravel • Tailwind</p>
+            <p>POS system for multi-branch coffee shop management with stock, recipe, and distribution features.</p>
+            <span class="status ongoing">Ongoing</span>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </div>
+  <svg class="deco d-pr1" viewBox="0 0 40 60"><use href="#sprig"/></svg>
+  <svg class="deco d-pr2" viewBox="0 0 30 30"><use href="#flower"/></svg>
+</section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="contact">
+  <div class="foot-inner">
+    <div class="foot-cat"><span class="script">Let's<br>Connect!</span><svg viewBox="0 0 140 110"><use href="#cat"/></svg></div>
+    <div class="foot-text">
+      <h2 class="script">~ ✦ ~ Thank You ~ ✦ ~</h2>
+      <p>So glad you visited! Let's stay in touch or just chat about tech, nature, or anything else.</p>
+      <div class="socials" data-socials></div>
+    </div>
+    <span class="foot-note script">Keep<br>Exploring<br>(◠‿◠)</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
