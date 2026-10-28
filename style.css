@@ -48,7 +48,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero { position: relative; min-height: 420px; display: flex; align-items: center; color: #fff;
   background: linear-gradient(rgba(20, 32, 24, .45), rgba(20, 32, 24, .45)), url("assets/hero-bg.png") center / cover, #3f5a45; }
 .hero-inner { position: relative; width: min(1000px, 92%); margin: 0 auto; padding: 70px 0 40px; display: flex; align-items: center; gap: 40px; }
-.avatar { flex: 0 0 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255, 255, 255, .9); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); }
+.avatar { width: 200px; height: 200px; flex: 0 0 200px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255, 255, 255, .9); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); }
 .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block; }
 .hero-text { position: relative; }
 .hero h1 .ico { position: absolute; left: -26px; top: .3em; width: 20px; height: 20px; margin: 0; }
@@ -169,6 +169,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 @media (max-width: 640px) {
   .hero-inner { flex-direction: column; text-align: center; padding-top: 80px; gap: 22px; }
+  .avatar { width: 170px; height: 170px; flex: 0 0 170px; }
   .hero .contact, .hero .socials { justify-content: center; }
   .hero h1 .ico { position: static; margin-right: .3em; }
   .hero .name { max-width: none; }
